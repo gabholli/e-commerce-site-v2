@@ -20,8 +20,14 @@ export default function AllProducts() {
                         <div className="flex flex-col justify-center gap-y-4
                                 p-2">
                             <img className="rounded-xl size-72" src={product.image}></img>
-                            <h1>{product.title}</h1>
-                            <p>${product.price}</p>
+                            <h1 className="h-20">{product.title}</h1>
+                            <div className='flex justify-between mt-16 md:mt-0'>
+                                <p className="pb-14">${product.price}</p>
+                                <p className="bg-green-300 px-4 pt-1 pb-2 h-8 flex justify-center items-center
+                                    rounded-2xl">
+                                    {product.category}
+                                </p>
+                            </div>
                         </div>
                     </Link >
                     <button className='w-full bg-green-300 py-3 px-6'

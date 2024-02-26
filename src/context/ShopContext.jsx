@@ -30,7 +30,7 @@ export default function ShopContextProvider(props) {
 
     function getDefaultCart() {
         let cart = {}
-        for (let i = 0; i < products.length + 1; i++) {
+        for (let i = 0; i < products.length; i++) {
             cart[i] = 0
         }
         return cart
