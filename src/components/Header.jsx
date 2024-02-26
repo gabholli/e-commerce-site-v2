@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
 
@@ -10,8 +11,15 @@ function Header() {
                     <h1 className='text-5xl'>React Shop</h1>
                 </div>
                 <div className='flex gap-10'>
-                    <h1>Login</h1>
-                    <h1>Cart</h1>
+                    <Link to="/">
+                        Products
+                    </Link>
+                    <Link to="">
+                        Login
+                    </Link>
+                    <Link to="cart">
+                        Cart
+                    </Link>
                 </div>
             </div>
             <hr />
