@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 function Layout() {
     return (
-        <div className='min-h-svh py-6 font-arial'>
+        <div className='min-h-screen py-6 font-arial flex flex-col'>
             <Header />
             <main>
                 <Outlet />
