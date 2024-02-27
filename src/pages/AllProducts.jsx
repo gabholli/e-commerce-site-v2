@@ -30,7 +30,7 @@ export default function AllProducts() {
                         </div>
                     </div>
                 </Link >
-                <button className='w-full bg-green-300 py-3 px-6'
+                <button className='w-full bg-green-300 hover:underline active:bg-green-400 py-3 px-6'
                     onClick={() => { addToCart(product.id) }}>
                     Add to Cart
                 </button>

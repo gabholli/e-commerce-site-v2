@@ -22,7 +22,7 @@ export default function CartItems() {
                         <p className='md:hidden font-extrabold'>Total Item Price:</p>
                         <p>${Number(product.price * cartItems[product.id]).toFixed(2)}</p>
                         <button
-                            className='bg-green-300 px-4 py-2 rounded-2xl'
+                            className='bg-green-300 px-4 py-2 rounded-2xl hover:underline active:bg-green-400'
                             onClick={() => { removeFromCart(product.id) }}>Delete</button>
 
                     </div>
@@ -52,7 +52,10 @@ export default function CartItems() {
                     <div className='flex flex-row justify-center items-center gap-x-10'>
                         <p className='font-extrabold'>Total Price:</p>
                         <p>${getTotalCartPrice()}</p>
-                        <button className='bg-green-300 px-4 py-2 rounded-2xl'>Checkout</button>
+                        <button className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
+                            hover:underline'>
+                            Checkout
+                        </button>
                     </div>
                 </div>
             </div>

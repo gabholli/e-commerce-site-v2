@@ -8,27 +8,32 @@ export default function SideMenu() {
                 items-center md:items-start gap-4 rounded-2xl border-gray-300 border-2'>
                 <h1 className='underline'>Categories</h1>
                 <ul className='list-none flex flex-col gap-1 text-center md:text-left'>
-                    <Link>
+                    <Link className='hover:underline'
+                    >
                         <li>
                             All
                         </li>
                     </Link>
-                    <Link>
+                    <Link className='hover:underline'
+                    >
                         <li>
                             Electronics
                         </li>
                     </Link>
-                    <Link>
+                    <Link className='hover:underline'
+                    >
                         <li>
                             Jewelery
                         </li>
                     </Link>
-                    <Link>
+                    <Link className='hover:underline'
+                    >
                         <li>
                             Men's Clothing
                         </li>
                     </Link>
-                    <Link>
+                    <Link className='hover:underline'
+                    >
                         <li>
                             Women's Clothing
                         </li>

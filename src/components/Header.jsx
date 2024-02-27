@@ -14,14 +14,18 @@ function Header() {
                     <h1 className='text-5xl'>React Shop</h1>
                 </div>
                 <div className='flex gap-10'>
-                    <Link to="/">
+                    <Link
+                        className='hover:underline'
+                        to="/">
                         Products
                     </Link>
-                    <Link to="">
+                    <Link
+                        className='hover:underline'
+                        to="">
                         Login
                     </Link>
                     <Link
-                        className='flex gap-x-2'
+                        className='flex gap-x-2 hover:underline'
                         to="cart">
                         Cart
                         <span>
