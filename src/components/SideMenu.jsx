@@ -7,7 +7,7 @@ export default function SideMenu() {
             <nav className='p-4 pt-4 flex flex-col justify-center 
                 items-center md:items-start gap-4 rounded-2xl border-gray-300 border-2'>
                 <h1 className='underline'>Categories</h1>
-                <ul className='list-none flex flex-col gap-1'>
+                <ul className='list-none flex flex-col gap-1 text-center md:text-left'>
                     <Link>
                         <li>
                             All
