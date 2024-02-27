@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import AllProducts from './pages/AllProducts'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
+import NotFound from './pages/NotFound/NotFound'
 export default function App() {
 
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route index element={<AllProducts />} />
           <Route path=":productId" element={<ProductDetail />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
       </Routes>
