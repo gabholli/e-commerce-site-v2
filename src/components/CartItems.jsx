@@ -11,7 +11,7 @@ export default function CartItems() {
                 <>
                     <div key={product.id} className='grid md:grid-cols-6 px-4 md:px-12 lg:px-44 justify-items-center
                     gap-y-8 md:gap-x-10 items-center mb-16'>
-                        <img src={product.image} className='size-24'></img>
+                        <img src={product.image} className='size-24 mb-2'></img>
                         <p className='text-center'>{product.title}</p>
                         <p className='md:hidden font-extrabold'>Price:</p>
                         <p>${Number(product.price).toFixed(2)}</p>
