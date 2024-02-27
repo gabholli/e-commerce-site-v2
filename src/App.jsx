@@ -4,7 +4,7 @@ import Layout from './components/Layout'
 import AllProducts from './pages/AllProducts'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
-import NotFound from './pages/NotFound/NotFound'
+import NotFound from './pages/NotFound'
 export default function App() {
 
   return (

@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
 
-function Layout() {
+export default function Layout() {
     return (
         <div className='min-h-screen py-6 font-arial flex flex-col'>
             <Header />
-            <main>
+            <main className='m-auto'>
                 <Outlet />
             </main>
             <Footer />
@@ -15,4 +15,3 @@ function Layout() {
     )
 }
 
-export default Layout
