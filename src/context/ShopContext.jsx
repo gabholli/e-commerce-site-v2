@@ -57,7 +57,13 @@ export default function ShopContextProvider(props) {
 
     }
 
-    const contextValue = { products, cartItems, addToCart, removeFromCart, getTotalCartPrice }
+    function getItemTotalQuantity(cartItems) {
+        let sum = Object.values(cartItems)
+            .reduce((a, b) => a + b, 0)
+        return sum
+    }
+
+    const contextValue = { products, cartItems, addToCart, removeFromCart, getTotalCartPrice, getItemTotalQuantity }
 
 
     return (

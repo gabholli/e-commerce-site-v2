@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { ShopContext } from '../context/ShopContext'
 
 function Header() {
+
+    const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
     return (
         <>
@@ -17,8 +20,13 @@ function Header() {
                     <Link to="">
                         Login
                     </Link>
-                    <Link to="cart">
+                    <Link
+                        className='flex gap-x-2'
+                        to="cart">
                         Cart
+                        <span>
+                            ({getItemTotalQuantity(cartItems)})
+                        </span>
                     </Link>
                 </div>
             </header>
