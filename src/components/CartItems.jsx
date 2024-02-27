@@ -10,17 +10,17 @@ export default function CartItems() {
             return (
                 <>
                     <div key={product.id} className='grid md:grid-cols-6 px-4 md:px-12 lg:px-44 justify-items-center
-                    gap-y-3 md:gap-x-10 items-center mb-16'>
+                    gap-y-8 md:gap-x-10 items-center mb-16'>
                         <img src={product.image} className='size-24'></img>
                         <p className='text-center'>{product.title}</p>
                         <p className='md:hidden font-extrabold'>Price:</p>
-                        <p>${product.price}</p>
+                        <p>${Number(product.price).toFixed(2)}</p>
                         <p className='md:hidden font-extrabold'>Quantity:</p>
                         <p>
                             {cartItems[product.id]}
                         </p>
                         <p className='md:hidden font-extrabold'>Total Item Price:</p>
-                        <p>${product.price * cartItems[product.id]}</p>
+                        <p>${Number(product.price * cartItems[product.id]).toFixed(2)}</p>
                         <button
                             className='bg-green-300 px-4 py-2 rounded-2xl'
                             onClick={() => { removeFromCart(product.id) }}>Delete</button>
@@ -47,9 +47,9 @@ export default function CartItems() {
                     <p>Remove</p>
                 </div>
                 <hr />
-                <div className='mt-16'>
+                <div className='my-16'>
                     {cartProducts}
-                    <div className='flex flex-col justify-center items-center gap-y-2'>
+                    <div className='flex flex-row justify-center items-center gap-x-10'>
                         <p className='font-extrabold'>Total Price:</p>
                         <p>${getTotalCartPrice()}</p>
                         <button className='bg-green-300 px-4 py-2 rounded-2xl'>Checkout</button>

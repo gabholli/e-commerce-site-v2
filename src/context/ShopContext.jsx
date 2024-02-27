@@ -53,7 +53,7 @@ export default function ShopContextProvider(props) {
                 totalPrice += itemInfo.price * cartItems[item]
             }
         }
-        return totalPrice.toFixed(2)
+        return Number(totalPrice).toFixed(2)
 
     }
 
