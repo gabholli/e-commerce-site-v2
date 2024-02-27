@@ -20,7 +20,7 @@ export default function AllProducts() {
                     <div className="flex flex-col justify-center gap-y-4
                                 p-2">
                         <img className="rounded-xl size-72 self-center" src={product.image}></img>
-                        <h1 className="h-20">{product.title}</h1>
+                        <h1 className="h-10 md:h-20">{product.title}</h1>
                         <div className='flex justify-between mt-16 md:mt-0'>
                             <p className="pb-14">${Number(product.price).toFixed(2)}</p>
                             <p className="bg-green-300 px-4 pt-1 pb-2 h-8 flex justify-center items-center
