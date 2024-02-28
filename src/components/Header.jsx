@@ -16,7 +16,8 @@ function Header() {
                 <div className='flex gap-10'>
                     <Link
                         className='hover:underline'
-                        to="/">
+                        to="/"
+                        state={{ category: "" }}>
                         Products
                     </Link>
                     <Link

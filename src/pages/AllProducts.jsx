@@ -1,15 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import SideMenu from '../components/SideMenu'
 import { ShopContext } from '../context/ShopContext'
 
 export default function AllProducts() {
 
     const { products, addToCart } = useContext(ShopContext)
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    const location = useLocation()
 
-    console.log(products)
+    const categoryType = location.state.category
 
-    const allProducts = products?.map((product, index) => {
+    const filteredResults = categoryType
+        ? products?.filter(product => product.category === categoryType)
+        : products
+
+    const allProducts = filteredResults?.map((product, index) => {
         return (
 
             <div key={product.id} className="p-2 border-gray-300 border-2 rounded-2xl flex

@@ -26,6 +26,9 @@ export default {
           "price",
           "desc",
           "button"
+        ],
+        "allProducts": [
+          "products sidemenu"
         ]
       },
       gridTemplateColumns: {

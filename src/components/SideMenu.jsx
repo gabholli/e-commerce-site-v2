@@ -8,31 +8,46 @@ export default function SideMenu() {
                 items-center md:items-start gap-4 rounded-2xl border-gray-300 border-2'>
                 <h1 className='underline'>Categories</h1>
                 <ul className='list-none flex flex-col gap-1 text-center md:text-left'>
-                    <Link className='hover:underline'
+                    <Link
+                        to="/"
+                        state={{ category: "" }}
+                        className='hover:underline'
                     >
                         <li>
                             All
                         </li>
                     </Link>
-                    <Link className='hover:underline'
+                    <Link
+                        to="/"
+                        state={{ category: "electronics" }}
+                        className='hover:underline'
                     >
                         <li>
                             Electronics
                         </li>
                     </Link>
-                    <Link className='hover:underline'
+                    <Link
+                        to="/"
+                        state={{ category: "jewelery" }}
+                        className='hover:underline'
                     >
                         <li>
                             Jewelery
                         </li>
                     </Link>
-                    <Link className='hover:underline'
+                    <Link
+                        to="/"
+                        state={{ category: "men's clothing" }}
+                        className='hover:underline'
                     >
                         <li>
                             Men's Clothing
                         </li>
                     </Link>
-                    <Link className='hover:underline'
+                    <Link
+                        to="/"
+                        state={{ category: "women's clothing" }}
+                        className='hover:underline'
                     >
                         <li>
                             Women's Clothing
