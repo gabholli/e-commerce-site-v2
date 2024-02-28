@@ -9,9 +9,7 @@ export default function AllProducts() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const location = useLocation()
-
-    const categoryType = location.state.category
-
+    const categoryType = location.state?.category || ""
     const filteredResults = categoryType
         ? products?.filter(product => product.category === categoryType)
         : products
