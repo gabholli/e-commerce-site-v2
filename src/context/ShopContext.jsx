@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 
 const ShopContext = createContext()
 
-export default function ShopContextProvider(props) {
+export default function ShopContextProvider({ children }) {
 
     const [products, setProducts] = useState([])
     const [cartItems, setCartItems] = useState(getDefaultCart())
@@ -74,7 +74,7 @@ export default function ShopContextProvider(props) {
 
     return (
         <ShopContext.Provider value={contextValue}>
-            {props.children}
+            {children}
         </ShopContext.Provider>
     )
 }
