@@ -23,7 +23,7 @@ export default function AllProducts() {
                         <h1 className="h-10 md:h-20">{product.title}</h1>
                         <div className='flex justify-between mt-16 md:mt-0'>
                             <p className="pb-14">${Number(product.price).toFixed(2)}</p>
-                            <p className="bg-green-300 px-4 pt-1 pb-2 h-8 flex justify-center items-center
+                            <p className="bg-green-300 px-4 py-2 h-8 flex justify-center items-center
                                     rounded-2xl">
                                 {product.category}
                             </p>
