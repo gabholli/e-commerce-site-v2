@@ -11,8 +11,20 @@ export default {
     extend: {
       minHeight: {
         screen: ["100vh", "100svh"]
-      }
+      },
+      gridTemplateAreas: {
+        "productDetail": [
+          ". image title . .",
+          ". image price . .",
+          ". image desc desc ."
+        ]
+      },
+      gridTemplateColumns: {
+        'layout': 'repeat(5, 1fr)',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@savvywombat/tailwindcss-grid-areas')
+  ],
 }
