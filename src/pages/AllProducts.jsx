@@ -46,7 +46,7 @@ export default function AllProducts() {
 
     return (
         <div className='py-6'>
-            <div className='flex flex-col md:flex-row p-4'>
+            <div className='grid grid-areas-allProducts p-4'>
                 <div className='grid grid-cols-1 lg:grid-cols-3 md:pr-4 py-4 gap-4 order-2 md:order-1'>
                     {allProducts}
                 </div>

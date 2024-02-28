@@ -28,7 +28,7 @@ export default {
           "button"
         ],
         "allProducts": [
-          "products sidemenu"
+          ". products sidemenu ."
         ]
       },
       gridTemplateColumns: {
