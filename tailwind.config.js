@@ -13,10 +13,17 @@ export default {
         screen: ["100vh", "100svh"]
       },
       gridTemplateAreas: {
+        // "productDetailMedium": [
+        //   ". image title . .",
+        //   ". image price . .",
+        //   ". image desc desc .",
+        //   ". image button . ."
+        // ],
         "productDetailMedium": [
-          ". image title . .",
-          ". image price . .",
-          ". image desc desc .",
+          ". . image . .",
+          ". . title . .",
+          ". . price . .",
+          ". desc desc desc .",
           ". . button . ."
         ],
         "productDetailMobile": [

@@ -53,14 +53,14 @@ export default function ProductDetail() {
     return (
         <div className='grid grid-areas-productDetailMobile md:grid-areas-productDetailMedium md:grid-cols-layoutMedium 
         grid-cols-layoutMobile gap-x-24 gap-y-4 border-gray-300 border-2 rounded-2xl p-4 mx-2'>
-            <img className="grid-in-image"
+            <img className="grid-in-image place-self-center"
                 src={product.image}
                 alt="Product">
             </img>
-            <h1 className='self-end text-center md:text-left grid-in-title'>{product.title}</h1>
-            <p className='self-center text-center md:text-left grid-in-price'>${product.price}</p>
+            <h1 className='self-end text-center grid-in-title font-extrabold'>{product.title}</h1>
+            <p className='self-center text-center grid-in-price'>${Number(product.price).toFixed(2)}</p>
             <p className='grid-in-desc'>{product.description}</p>
-            <button className='grid-in-button rounded-2xl bg-green-300 hover:underline active:bg-green-400 py-3 px-6'
+            <button className='grid-in-button rounded-2xl bg-green-300 hover:underline active:bg-green-400 py-3 px-6 md:w-56'
                 onClick={() => { addToCart(product.id) }}>
                 Add to Cart
             </button>
