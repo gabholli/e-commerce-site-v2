@@ -51,7 +51,7 @@ export default function CartItems() {
                         <hr />
                         <div className='my-16'>
                             {cartProducts}
-                            <div className='flex flex-row justify-center items-center gap-x-5 md:gap-x-10'>
+                            <div className='flex flex-col gap-y-8 justify-center items-center gap-x-5 md:gap-x-10'>
                                 <p className='font-extrabold'>Total Price:</p>
                                 <p>${getTotalCartPrice()}</p>
                                 <button className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
