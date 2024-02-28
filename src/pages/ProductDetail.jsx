@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { ShopContext } from '../context/ShopContext'
 
 export default function ProductDetail() {
+
+    const { addToCart } = useContext(ShopContext)
 
     const { productId } = useParams()
     const [product, setProduct] = useState([])
@@ -14,7 +17,7 @@ export default function ProductDetail() {
             setLoading(true)
             try {
                 const response = await fetch(
-                    `https://fakestoreapi.com/products/1`
+                    `https://fakestoreapi.com/products/${productId}`
                 )
                 const data = await response.json()
                 setProduct(data)
@@ -26,17 +29,41 @@ export default function ProductDetail() {
             }
         }
         fetchProductDetail()
-    }, [])
+    }, [productId])
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center">
+                <h1>Loading...</h1>
+            </div>
+        )
+    }
+
+    if (error) {
+        return (
+            <div className="flex flex-col justify-center items-center">
+                <h1 className=" text-3xl mb-8 text-center mt-8">There was an error loading this page...</h1>
+                <Link to="/" className="bg-green-300 px-4 py-2 rounded text-xl hover:underline">
+                    Return to home
+                </Link>
+            </div>
+        )
+    }
 
     return (
-        <div className='grid grid-areas-productDetail grid-cols-layout gap-x-24 gap-y-4'>
+        <div className='grid grid-areas-productDetailMobile md:grid-areas-productDetailMedium md:grid-cols-layoutMedium 
+        grid-cols-layoutMobile gap-x-24 gap-y-4 border-gray-300 border-2 rounded-2xl p-4 mx-2'>
             <img className="grid-in-image"
                 src={product.image}
                 alt="Product">
             </img>
-            <h1 className='grid-in-title'>{product.title}</h1>
-            <p className='grid-in-price'>${product.price}</p>
+            <h1 className='self-end text-center md:text-left grid-in-title'>{product.title}</h1>
+            <p className='self-center text-center md:text-left grid-in-price'>${product.price}</p>
             <p className='grid-in-desc'>{product.description}</p>
+            <button className='grid-in-button rounded-2xl bg-green-300 hover:underline active:bg-green-400 py-3 px-6'
+                onClick={() => { addToCart(product.id) }}>
+                Add to Cart
+            </button>
         </div>
     )
 }

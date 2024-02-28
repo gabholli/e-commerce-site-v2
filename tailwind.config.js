@@ -13,14 +13,24 @@ export default {
         screen: ["100vh", "100svh"]
       },
       gridTemplateAreas: {
-        "productDetail": [
+        "productDetailMedium": [
           ". image title . .",
           ". image price . .",
-          ". image desc desc ."
+          ". image desc desc .",
+          ". . button . ."
+        ],
+        "productDetailMobile": [
+          "image",
+          ".",
+          "title",
+          "price",
+          "desc",
+          "button"
         ]
       },
       gridTemplateColumns: {
-        'layout': 'repeat(5, 1fr)',
+        'layoutMedium': 'repeat(5, 1fr)',
+        "layoutMobile": "1fr"
       },
     },
   },

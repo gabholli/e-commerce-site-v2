@@ -5,8 +5,6 @@ import { ShopContext } from '../context/ShopContext'
 
 export default function AllProducts() {
 
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
     const { products, addToCart } = useContext(ShopContext)
 
     console.log(products)
