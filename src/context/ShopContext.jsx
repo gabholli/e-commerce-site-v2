@@ -63,7 +63,13 @@ export default function ShopContextProvider(props) {
         return sum
     }
 
-    const contextValue = { products, cartItems, addToCart, removeFromCart, getTotalCartPrice, getItemTotalQuantity }
+    function checkArrayHasValue(array) {
+        let hasValue = array.some(value => value !== undefined &&
+            value !== null && value !== "")
+        return hasValue
+    }
+
+    const contextValue = { products, cartItems, addToCart, removeFromCart, getTotalCartPrice, getItemTotalQuantity, checkArrayHasValue }
 
 
     return (

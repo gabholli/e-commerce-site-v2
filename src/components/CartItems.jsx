@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 
 export default function CartItems() {
 
-    const { products, cartItems, removeFromCart, getTotalCartPrice } = useContext(ShopContext)
+    const { products, cartItems, removeFromCart, getTotalCartPrice, checkArrayHasValue } = useContext(ShopContext)
 
     const cartProducts = products?.map(product => {
         if (cartItems[product.id] > 0) {
@@ -35,32 +35,33 @@ export default function CartItems() {
 
     return (
         <div>
-            {cartProducts[0] ? (
-                <div>
-                    <h1 className='text-center text-4xl py-10'>Cart</h1>
-                    <div className='grid md:grid-cols-6 md:px-12 md:pb-14 lg:px-44 justify-items-center gap-x-10 max-[767px]:hidden
+            {
+                checkArrayHasValue(cartProducts) ? (
+                    <div>
+                        <h1 className='text-center text-4xl py-10'>Cart</h1>
+                        <div className='grid md:grid-cols-6 md:px-12 md:pb-14 lg:px-44 justify-items-center gap-x-10 max-[767px]:hidden
                 font-extrabold'>
-                        <p>Products</p>
-                        <p>Title</p>
-                        <p>Price</p>
-                        <p>Quantity</p>
-                        <p>Total</p>
-                        <p>Remove</p>
-                    </div>
-                    <hr />
-                    <div className='my-16'>
-                        {cartProducts}
-                        <div className='flex flex-row justify-center items-center gap-x-5 md:gap-x-10'>
-                            <p className='font-extrabold'>Total Price:</p>
-                            <p>${getTotalCartPrice()}</p>
-                            <button className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
+                            <p>Products</p>
+                            <p>Title</p>
+                            <p>Price</p>
+                            <p>Quantity</p>
+                            <p>Total</p>
+                            <p>Remove</p>
+                        </div>
+                        <hr />
+                        <div className='my-16'>
+                            {cartProducts}
+                            <div className='flex flex-row justify-center items-center gap-x-5 md:gap-x-10'>
+                                <p className='font-extrabold'>Total Price:</p>
+                                <p>${getTotalCartPrice()}</p>
+                                <button className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
                             hover:underline'>
-                                Checkout
-                            </button>
+                                    Checkout
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : <h1 className='text-2xl'>Cart is empty</h1>
+                ) : <h1 className='text-2xl'>Cart is empty</h1>
             }
         </div>
     )
