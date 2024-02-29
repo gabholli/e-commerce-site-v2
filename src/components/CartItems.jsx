@@ -37,7 +37,7 @@ export default function CartItems() {
         <div>
             {
                 checkArrayHasValue(cartProducts) ? (
-                    <div className='border-gray-300 border-2 m-2'>
+                    <div className='border-gray-300 border-2 md:border-none'>
                         <h1 className='text-center text-4xl py-10'>Cart</h1>
                         <div className='grid md:grid-cols-6 md:px-12 md:pb-14 lg:px-44 justify-items-center gap-x-10 max-[767px]:hidden
                 font-extrabold'>
