@@ -16,9 +16,10 @@ export default function Login() {
         e.preventDefault()
         loginUser(loginFormData)
             .then(data => {
-                console.log(data)
                 setError(null)
-                localStorage.setItem("Loggedin", true)
+                if (data.token) {
+                    localStorage.setItem("Loggedin", true)
+                }
                 navigate("/")
             })
             .catch(err => {

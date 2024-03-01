@@ -6,6 +6,10 @@ function Header() {
 
     const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
+    // function logOut() {
+    //     localStorage.clear()
+    // }
+
     return (
         <>
             <header className='flex justify-between flex-col gap-y-6 md-gap-0 md:flex-row md:px-16 items-center
@@ -25,11 +29,13 @@ function Header() {
                         to="login">
                         Login
                     </Link>
-                    <Link
+                    {/* <Link
                         className='hover:underline'
+                        onClick={logOut}
+                        to="logout"
                     >
                         Log out
-                    </Link>
+                    </Link> */}
                     <Link
                         className='flex gap-x-2 hover:underline'
                         to="cart">
