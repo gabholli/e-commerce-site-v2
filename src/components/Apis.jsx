@@ -1,16 +1,19 @@
 export async function loginUser(creds) {
-    const res = await fetch("https://fakestoreapi.com/users",
+    const res = await fetch("https://fakestoreapi.com/auth/login",
         {
-            method: "post", body: JSON.stringify(
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(
                 {
-                    email: creds.email,
+                    username: creds.username,
                     password: creds.password
                 }
             )
         }
     )
     const data = await res.json()
-
     if (!res.ok) {
         throw {
             message: data.message,

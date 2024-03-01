@@ -4,16 +4,19 @@ import AuthRequired from "./AuthRequired"
 import { loginUser } from "../components/Apis"
 
 export default function Login() {
-    const [loginFormData, setLoginFormData] = React.useState({ email: "", password: "" })
+    const [loginFormData, setLoginFormData] = useState({ username: "", password: "" })
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const location = useLocation()
     const navigate = useNavigate()
 
+    console.log(loginFormData)
+
     function handleSubmit(e) {
         e.preventDefault()
         loginUser(loginFormData)
             .then(data => {
+                console.log(data)
                 setError(null)
                 localStorage.setItem("Loggedin", true)
                 navigate("/")
@@ -31,9 +34,7 @@ export default function Login() {
         }))
     }
 
-    function logOut() {
-        localStorage.clear()
-    }
+
 
     return (
         <div className="">
@@ -44,12 +45,12 @@ export default function Login() {
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="">
                 <input
-                    name="email"
+                    name="username"
                     onChange={handleChange}
-                    type="email"
-                    placeholder="Email address"
-                    autoComplete="current-email"
-                    value={loginFormData.email}
+                    type="texxt"
+                    placeholder="User Name"
+                    autoComplete="current-username"
+                    value={loginFormData.username}
                     required
                 />
                 <input
@@ -63,7 +64,6 @@ export default function Login() {
                 />
                 <button type="submit">Log in</button>
             </form>
-            <button onClick={() => logOut()}>Log out</button>
         </div>
     )
 

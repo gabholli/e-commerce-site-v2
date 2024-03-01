@@ -26,6 +26,11 @@ function Header() {
                         Login
                     </Link>
                     <Link
+                        className='hover:underline'
+                    >
+                        Log out
+                    </Link>
+                    <Link
                         className='flex gap-x-2 hover:underline'
                         to="cart">
                         Cart
