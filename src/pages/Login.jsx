@@ -10,8 +10,6 @@ export default function Login() {
     const location = useLocation()
     const navigate = useNavigate()
 
-    console.log(loginFormData)
-
     function handleSubmit(e) {
         e.preventDefault()
         loginUser(loginFormData)
@@ -41,29 +39,44 @@ export default function Login() {
         <div className="">
             {
                 location.state?.message &&
-                <h1>{location.state.message}</h1>
+                <h1 className="text-center text-red-800 font-extrabold">{location.state.message}</h1>
             }
-            <h1>Sign in to your account</h1>
-            <form onSubmit={handleSubmit} className="">
+            {
+                location.state?.logoutMessage &&
+                <h1 className="text-center text-red-800 font-extrabold">{location.state.logoutMessage}</h1>
+            }
+            {
+                error?.message &&
+                <h1 className="text-center text-red-800 font-extrabold">No user with those credentials found!</h1>
+            }
+            <form onSubmit={handleSubmit} className="flex flex-col gap-y-4 p-8">
+                <h1 className="text-center">Sign in to your account(Test credentials provided):</h1>
+
                 <input
+                    className="border-2 border-gray-300 rounded-2xl indent-4"
                     name="username"
                     onChange={handleChange}
-                    type="texxt"
-                    placeholder="User Name"
+                    type="text"
+                    placeholder="donero"
                     autoComplete="current-username"
                     value={loginFormData.username}
                     required
                 />
                 <input
+                    className="border-2 border-gray-300 rounded-2xl indent-4"
                     name="password"
                     onChange={handleChange}
                     type="password"
-                    placeholder="Password"
+                    placeholder="ewedon"
                     autoComplete="current-password"
                     value={loginFormData.password}
                     required
                 />
-                <button type="submit">Log in</button>
+                <button
+                    className="py-2 px-4 bg-green-300 rounded-2xl"
+                    type="submit"
+                >Log in
+                </button>
             </form>
         </div>
     )

@@ -6,9 +6,9 @@ function Header() {
 
     const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
-    // function logOut() {
-    //     localStorage.clear()
-    // }
+    function logOut() {
+        localStorage.clear()
+    }
 
     return (
         <>
@@ -17,7 +17,7 @@ function Header() {
                 <div>
                     <h1 className='text-5xl'>React Shop</h1>
                 </div>
-                <div className='flex gap-10'>
+                <div className='flex md:gap-12 gap-2'>
                     <Link
                         className='hover:underline'
                         to="/"
@@ -29,13 +29,14 @@ function Header() {
                         to="login">
                         Login
                     </Link>
-                    {/* <Link
+                    <Link
                         className='hover:underline'
                         onClick={logOut}
-                        to="logout"
+                        to="login"
+                        state={{ logoutMessage: "You are logged out" }}
                     >
                         Log out
-                    </Link> */}
+                    </Link>
                     <Link
                         className='flex gap-x-2 hover:underline'
                         to="cart">
