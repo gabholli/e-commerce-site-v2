@@ -1,8 +1,12 @@
-# React + Vite
+# E-Commerce Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains files for a mock e-commerce website.
 
-Currently, two official plugins are available:
+# What was used:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- React Router
+- Tailwind CSS
+- JavaScript
+
+To access, go to https://gabholli-e-commerce.netlify.app
