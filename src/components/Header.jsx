@@ -22,7 +22,7 @@ function Header() {
                     </Link>
                     <Link
                         className='hover:underline'
-                        to="">
+                        to="login">
                         Login
                     </Link>
                     <Link
