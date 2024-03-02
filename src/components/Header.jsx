@@ -7,9 +7,9 @@ function Header() {
     const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
     function logOut() {
-        // localStorage.setItem("Cart Items", JSON.stringify({}))
+        localStorage.setItem("Cart Items", JSON.stringify({}))
         localStorage.removeItem("Loggedin")
-
+        window.location.reload(true)
     }
 
     return (
@@ -37,7 +37,7 @@ function Header() {
                         to="login"
                         state={{ logoutMessage: "You are logged out" }}
                     >
-                        Log out
+                        Log Out
                     </Link>
                     <Link
                         className='flex gap-x-2 hover:underline'

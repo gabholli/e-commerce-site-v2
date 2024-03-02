@@ -2,10 +2,12 @@ import React, { createContext, useEffect, useState } from 'react'
 
 const ShopContext = createContext()
 
+const getItemsFromLocalStorage = JSON.parse(localStorage.getItem("Cart Items")) || {}
+
 export default function ShopContextProvider({ children }) {
 
     const [products, setProducts] = useState([])
-    const [cartItems, setCartItems] = useState(getDefaultCart())
+    const [cartItems, setCartItems] = useState(getItemsFromLocalStorage)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
 
@@ -30,20 +32,20 @@ export default function ShopContextProvider({ children }) {
 
     // useEffect(() => {
     //     const data = window.localStorage.getItem("Cart Items")
-    //     setCartItems(JSON.parse(data))
+    //     if (data !== null) setCartItems(JSON.parse(data))
     // }, [])
 
-    // useEffect(() => {
-    //     window.localStorage.setItem("Cart Items", JSON.stringify(cartItems))
-    // }, [cartItems])
+    useEffect(() => {
+        window.localStorage.setItem("Cart Items", JSON.stringify(cartItems))
+    }, [cartItems])
 
-    function getDefaultCart() {
-        let cart = {}
-        for (let i = 0; i < products.length; i++) {
-            cart[i] = 0
-        }
-        return cart
-    }
+    // function getDefaultCart() {
+    //     let cart = {}
+    //     for (let i = 0; i < products.length; i++) {
+    //         cart[i] = 0
+    //     }
+    //     return cart
+    // }
 
     function addToCart(itemId) {
         setCartItems(prev => ({ ...prev, [itemId]: (prev[itemId] + 1) || 1 }))
@@ -67,7 +69,7 @@ export default function ShopContextProvider({ children }) {
     }
 
     function getItemTotalQuantity(cartItems) {
-        let sum = Object.values(cartItems)
+        let sum = Object && Object.values(cartItems)
             .reduce((a, b) => a + b, 0)
         return sum
     }

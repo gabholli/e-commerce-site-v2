@@ -14,6 +14,7 @@ export async function loginUser(creds) {
         }
     )
     const data = await res.json()
+
     if (!res.ok) {
         throw {
             message: data.message,
