@@ -28,6 +28,15 @@ export default function ShopContextProvider({ children }) {
         fetchAllProducts()
     }, [])
 
+    // useEffect(() => {
+    //     const data = window.localStorage.getItem("Cart Items")
+    //     setCartItems(JSON.parse(data))
+    // }, [])
+
+    // useEffect(() => {
+    //     window.localStorage.setItem("Cart Items", JSON.stringify(cartItems))
+    // }, [cartItems])
+
     function getDefaultCart() {
         let cart = {}
         for (let i = 0; i < products.length; i++) {
@@ -68,6 +77,7 @@ export default function ShopContextProvider({ children }) {
             value !== null && value !== "")
         return hasValue
     }
+
 
     const contextValue = { products, cartItems, addToCart, removeFromCart, getTotalCartPrice, getItemTotalQuantity, checkArrayHasValue }
 

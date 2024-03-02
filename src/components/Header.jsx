@@ -7,7 +7,9 @@ function Header() {
     const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
     function logOut() {
-        localStorage.clear()
+        // localStorage.setItem("Cart Items", JSON.stringify({}))
+        localStorage.removeItem("Loggedin")
+
     }
 
     return (
