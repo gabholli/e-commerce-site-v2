@@ -7,9 +7,11 @@ function Header() {
     const { getItemTotalQuantity, cartItems } = useContext(ShopContext)
 
     function logOut() {
-        localStorage.setItem("Cart Items", JSON.stringify({}))
-        localStorage.removeItem("Loggedin")
-        window.location.reload(true)
+        if (localStorage.getItem("Loggedin")) {
+            localStorage.setItem("Cart Items", JSON.stringify({}))
+            localStorage.removeItem("Loggedin")
+            window.location.reload(true)
+        }
     }
 
     return (
