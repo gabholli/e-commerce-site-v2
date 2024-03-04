@@ -29,7 +29,7 @@ export default function ProductDetail() {
             }
         }
         fetchProductDetail()
-    }, [])
+    }, [productId])
 
     if (loading) {
         return (
