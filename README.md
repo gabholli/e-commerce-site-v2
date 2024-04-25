@@ -1,12 +1,20 @@
-# E-Commerce Site
+# Project Title
+E-commerce web site
 
-This repository contains files for a mock e-commerce website.
+## Description
+A mock merchandising site that allows for adding items to a shopping cart, logging in, and sorting items by category.
+I built this project using React.js, React Router, Tailwind CSS, and JavaScript.
 
-# What was used:
+## Getting Started
+### Dependencies
+- Nothing is required to install before accessing this project
+### Installing
+- No installation is required
+### Executing program
+- To access, go to https://gabholli-e-commerce.netlify.app
 
-- React.js
-- React Router
-- Tailwind CSS
-- JavaScript
+## Authors
+Gabe Hollifield
 
-To access, go to https://gabholli-e-commerce.netlify.app
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
