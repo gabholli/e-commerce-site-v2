@@ -53,7 +53,7 @@ export default function ProductDetail() {
     return (
         <div className='grid grid-areas-productDetailMobile md:grid-areas-productDetailMedium md:grid-cols-layoutMedium 
         grid-cols-layoutMobile gap-x-24 gap-y-4 border-gray-300 border-2 rounded-2xl p-4 mx-2'>
-            <img className="grid-in-image place-self-center"
+            <img className="grid-in-image place-self-center size-64 object-scale-down"
                 src={product.image}
                 alt="Product">
             </img>
