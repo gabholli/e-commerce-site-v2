@@ -21,7 +21,7 @@ export default function AllProducts() {
                         flex-col justify-between">
                 <Link to={`${product.id}`}>
                     <div className="flex flex-col justify-center gap-y-20 md:gap-y-8
-                                lg:gap-y-8 p-2">
+                                lg:gap-y-12 p-2">
                         <img className="rounded-xl size-72 self-center object-scale-down object-center" src={product.image} alt="Product"></img>
                         <h1 className="h-10 md:h-20 font-extrabold">{product.title}</h1>
                         <div className='flex justify-between mt-16 md:mt-0'>
