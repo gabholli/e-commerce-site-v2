@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { ShopContext } from '../context/ShopContext'
+import { toast } from 'react-toastify'
 
 export default function ProductDetail() {
 
@@ -61,7 +62,10 @@ export default function ProductDetail() {
             <p className='self-center text-center grid-in-price'>${Number(product.price).toFixed(2)}</p>
             <p className='grid-in-desc text-center'>{product.description}</p>
             <button className='grid-in-button rounded-2xl bg-green-300 hover:underline active:bg-green-400 py-3 px-6 md:w-56'
-                onClick={() => { addToCart(product.id) }}>
+                onClick={() => {
+                    addToCart(product.id)
+                    toast.success("Item added to cart!")
+                }}>
                 Add to Cart
             </button>
         </div>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import SideMenu from '../components/SideMenu'
 import { ShopContext } from '../context/ShopContext'
+import { toast } from 'react-toastify'
 
 export default function AllProducts() {
 
@@ -34,7 +35,10 @@ export default function AllProducts() {
                     </div>
                 </Link >
                 <button className='w-full rounded-2xl bg-green-300 hover:underline active:bg-green-400 py-3 px-6'
-                    onClick={() => { addToCart(product.id) }}>
+                    onClick={() => {
+                        addToCart(product.id)
+                        toast.success("Item added to cart!")
+                    }}>
                     Add to Cart
                 </button>
             </div >
