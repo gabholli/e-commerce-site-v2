@@ -1,9 +1,16 @@
 import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
+import { toast } from 'react-toastify'
 
 export default function CartItems() {
 
     const { products, cartItems, removeFromCart, getTotalCartPrice, checkArrayHasValue } = useContext(ShopContext)
+
+    const handleCheckout = () => {
+        toast.success("Checkout successful! Thank you for your purchase.")
+
+    }
+
 
     const cartProducts = products?.map(product => {
         if (cartItems[product.id] > 0) {
@@ -23,7 +30,11 @@ export default function CartItems() {
                         <p>${Number(product.price * cartItems[product.id]).toFixed(2)}</p>
                         <button
                             className='bg-green-300 px-4 py-2 rounded-2xl hover:underline active:bg-green-400'
-                            onClick={() => { removeFromCart(product.id) }}>Delete</button>
+                            onClick={() => {
+                                removeFromCart(product.id)
+                                toast.success("Item deleted from cart!")
+
+                            }}>Delete</button>
 
                     </div>
                     <hr className='border-gray-100 border-2 mb-12' />
@@ -54,8 +65,10 @@ export default function CartItems() {
                             <div className='flex flex-col gap-y-8 justify-center items-center gap-x-5 md:gap-x-10'>
                                 <p className='font-extrabold'>Total Price:</p>
                                 <p>${getTotalCartPrice()}</p>
-                                <button className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
-                            hover:underline'>
+                                <button
+                                    className='bg-green-300 px-4 py-2 rounded-2xl active:bg-green-400
+                            hover:underline'
+                                    onClick={handleCheckout}>
                                     Checkout
                                 </button>
                             </div>
