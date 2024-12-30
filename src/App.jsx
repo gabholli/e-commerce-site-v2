@@ -1,5 +1,5 @@
 import './index.css'
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router"
 import Layout from './components/Layout'
 import AllProducts from './pages/AllProducts'
 import ProductDetail from './pages/ProductDetail'

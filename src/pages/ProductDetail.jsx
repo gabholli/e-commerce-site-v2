@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link } from 'react-router'
 import { useState, useEffect } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { toast } from 'react-toastify'
