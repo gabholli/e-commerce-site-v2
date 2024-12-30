@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from '@savvywombat/tailwindcss-grid-areas'
+
 export default {
   content: [
     "./index.html",
@@ -45,6 +47,6 @@ export default {
     },
   },
   plugins: [
-    require('@savvywombat/tailwindcss-grid-areas')
+    plugin
   ],
 }
