@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router"
 import AuthRequired from "./AuthRequired"
 import { loginUser } from "../components/Apis"
 
