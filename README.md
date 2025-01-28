@@ -3,7 +3,7 @@ E-commerce web site
 
 ## Description
 A mock merchandising site that allows for adding items to a shopping cart, logging in, and sorting items by category.
-I built this project using React.js, React Router, Tailwind CSS, and JavaScript.
+I built this project using React.js, React Router 7, Tailwind CSS, and JavaScript.
 
 ## Getting Started
 ### Dependencies
